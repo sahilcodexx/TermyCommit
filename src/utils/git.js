@@ -1,0 +1,21 @@
+import { execSync } from "child_process";
+
+export function getGitDiff() {
+  try {
+    const diff = execSync("git diff", {
+      maxBuffer: 1024 * 1024 * 10,
+      encoding: "utf-8",
+    });
+
+    if (!diff || diff.trim() === "") {
+      return null;
+    }
+
+    return diff.slice(0, 6000);
+  } catch (err) {
+    if (err.message.includes("not a git repository")) {
+      throw new Error("Not a git repository");
+    }
+    throw err;
+  }
+}
