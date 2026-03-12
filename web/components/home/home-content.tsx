@@ -1,9 +1,11 @@
 "use client";
 
-import { Package, Github } from "lucide-react";
+import { Github, Download, Copy, Check } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useState } from "react";
+import { toast } from "sonner";
 
 interface HomeContentProps {
   version: string;
@@ -18,7 +20,14 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
     }
     return num.toString();
   };
+  const [animation, setAnimation] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText("npm install -g tcxcommit");
+    setAnimation(true);
+    toast("Copied to clipboard", { position: "bottom-right" });
 
+    setTimeout(() => setAnimation(false), 2000);
+  };
   return (
     <div className="flex min-h-screen items-center justify-center font-sans dark:bg-neutral-950 bg-orange-50/50">
       <main className="flex min-h-screen w-full max-w-xl flex-col items-center justify-between py-5 px-16  dark:bg-neutral-950 sm:items-start">
@@ -64,7 +73,7 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
                   transition={{ delay: 2, duration: 0.8 }}
                   className="flex items-center gap-1"
                 >
-                  <Package size={14} />
+                  <Download size={14} />
                   {formatDownloads(downloads)}
                 </motion.div>
                 <motion.div
@@ -113,13 +122,27 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
             transition={{ delay: 1.7, duration: 0.8 }}
             className="w-full flex flex-col items-end relative"
           >
-            <p className="max-w-md text-sm leading-8 tracking-normal text-zinc-600/50 dark:text-zinc-400/40 font-mono border border-dashed border-neutral-500/60 w-full px-4 py-0.5">
-              npm install -g{" "}
-              <span className="text-neutral-700 dark:text-white/70">
+            <p
+              onClick={handleCopy}
+              className="max-w-md text-sm leading-8 tracking-normal text-zinc-600/50 dark:text-zinc-400/50 font-mono border border-dashed border-neutral-500/60 dark:border-neutral-400/70 w-full px-4 py-0.5 cursor-pointer flex"
+            >
+              npm install -g
+              <span className="text-neutral-700 dark:text-white/80 ml-2">
                 tcxcommit
               </span>
+              <span className="absolute right-5 top-3 ">
+                {animation ? (
+                  <span>
+                    <Check size={14} />
+                  </span>
+                ) : (
+                  <span>
+                    <Copy size={14} />
+                  </span>
+                )}
+              </span>
             </p>
-            <span className="font-mono text-xs -rotate-10 absolute -bottom-4 -right-4 px-2 py-0.5 bg-amber-600 text-white">
+            <span className="font-mono text-xs -rotate-10 absolute -top-4 -left-4 px-2 py-0.5 bg-amber-600 text-white">
               Try it!
             </span>
           </motion.div>
@@ -160,6 +183,6 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
   );
 }
 
-const title = "Never write commit message manually";
+const title = "Never write commit message manually!";
 const words = title.split(" ");
 const lastWordIndex = words.length - 1;
