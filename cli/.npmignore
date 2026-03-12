@@ -1,0 +1,7 @@
+src/
+bin/
+tsconfig.json
+*.ts
+!*.d.ts
+node_modules/
+dist/*.tsbuildinfo

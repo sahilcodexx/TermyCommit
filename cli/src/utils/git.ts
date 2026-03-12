@@ -1,4 +1,6 @@
 import { execSync } from "child_process";
+import fs from "fs";
+import path from "path";
 
 export function getGitDiff(): string | null {
   try {
@@ -27,6 +29,14 @@ export function getGitDiff(): string | null {
     if (error.message.includes("not a git repository")) {
       throw new Error("Not a git repository");
     }
+    if (error.message.includes("git: 'add' is not available")) {
+      throw new Error("Git is not installed or not in PATH");
+    }
     return null;
   }
+}
+
+export function commit(message: string): void {
+  const escapedMessage = message.replace(/"/g, '\\"').replace(/\n/g, '\\n');
+  execSync(`git commit -m "${escapedMessage}"`, { stdio: "inherit" });
 }

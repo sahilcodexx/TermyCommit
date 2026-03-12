@@ -2,7 +2,7 @@ import { header } from "./ui/header.js";
 import { printBox, spinner } from "./ui/spinner.js";
 import { getApiKey, useTrial, saveKey } from "./utils/apiKey.js";
 import { generateCommitMessage } from "./api/openrouter.js";
-import { getGitDiff } from "./utils/git.js";
+import { getGitDiff, commit } from "./utils/git.js";
 import chalk from "chalk";
 import prompts from "prompts";
 
@@ -83,7 +83,7 @@ export async function run(): Promise<void> {
         
         printBox([chalk.red(error.message)], {
           borderColor: "red",
-          title: "API Error",
+          title: "Error",
         });
         return;
       } finally {
@@ -106,8 +106,7 @@ export async function run(): Promise<void> {
 
       if (response.action === "commit") {
         try {
-          const { execSync } = await import("child_process");
-          execSync(`git commit -m "${message}"`, { stdio: "inherit" });
+          commit(message);
         } catch {
           printBox([chalk.red("Git commit failed")], { borderColor: "red" });
           return;

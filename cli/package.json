@@ -1,16 +1,16 @@
 {
   "name": "termycommit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "AI-powered git commit message generator",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "bin": {
-    "termycommit": "./bin/cli.ts"
+    "termycommit": "./dist/cli.js"
   },
   "scripts": {
-    "start": "tsx bin/cli.ts",
-    "dev": "tsx bin/cli.ts",
-    "build": "tsc"
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [
     "git",
@@ -21,7 +21,6 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.6.2",
-    "dotenv": "^17.3.1",
     "prompts": "^2.4.2"
   },
   "devDependencies": {

@@ -1,4 +1,3 @@
-import dotenv from "dotenv";
 import fs from "fs";
 import os from "os";
 import path from "path";
@@ -28,7 +27,12 @@ function loadConfig(): Config {
     fs.writeFileSync(CONFIG_FILE, JSON.stringify(defaultConfig, null, 2));
     return defaultConfig;
   }
-  return JSON.parse(fs.readFileSync(CONFIG_FILE, "utf-8"));
+  try {
+    const data = fs.readFileSync(CONFIG_FILE, "utf-8");
+    return JSON.parse(data);
+  } catch {
+    return { freeTrials: MAX_FREE_TRIALS };
+  }
 }
 
 function saveConfig(config: Config): void {
