@@ -8,7 +8,7 @@ export default function IntroPage() {
       <H1>Introduction</H1>
 
       <P>
-        <strong>termyCommit</strong> is an AI-powered CLI tool that generates smart git commit messages using OpenRouter&apos;s free AI models. Never write commit messages manually again!
+        <strong>tcxcommit</strong> is an AI-powered CLI tool that generates smart git commit messages using OpenRouter&apos;s free AI models. Never write commit messages manually again!
       </P>
 
       <H2>Features</H2>
@@ -22,10 +22,10 @@ export default function IntroPage() {
         <Li><strong>Push Support</strong> - Option to push to remote after commit</Li>
       </Ul>
 
-      <H2>Why termyCommit?</H2>
+      <H2>Why tcxcommit?</H2>
 
       <P>
-        Writing good commit messages is important but often overlooked. termyCommit helps you:
+        Writing good commit messages is important but often overlooked. tcxcommit helps you:
       </P>
 
       <Ul>
@@ -41,7 +41,7 @@ export default function IntroPage() {
 
       <H2>Quick Example</H2>
 
-      <P>Here&apos;s what termyCommit generates for you:</P>
+      <P>Here&apos;s what tcxcommit generates for you:</P>
 
       <Pre>{`feat: Add user authentication module
 - Implement JWT-based login
@@ -51,7 +51,7 @@ export default function IntroPage() {
       <H2>Next Steps</H2>
 
       <P>
-        Ready to get started? Head over to the <A href="/docs/install">Installation</A> guide to set up termyCommit in your project.
+        Ready to get started? Head over to the <A href="/docs/install">Installation</A> guide to set up tcxcommit in your project.
       </P>
     </>
   );

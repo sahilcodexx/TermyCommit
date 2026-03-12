@@ -20,8 +20,8 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-xl flex-col items-center justify-between py-5 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-neutral-950 bg-orange-50/50">
+      <main className="flex min-h-screen w-full max-w-xl flex-col items-center justify-between py-5 px-16  dark:bg-neutral-950 sm:items-start">
         <div className="relative flex items-start justify-between w-full flex-1">
           <motion.h2
             initial={{ opacity: 0, filter: "blur(6px)" }}
@@ -29,7 +29,7 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
             transition={{ delay: 2, duration: 0.8 }}
             className="text-lg italic font-medium"
           >
-            termyCommit
+            tcxcommit
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, filter: "blur(6px)" }}
@@ -116,7 +116,7 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
             <p className="max-w-md text-sm leading-8 tracking-normal text-zinc-600/50 dark:text-zinc-400/40 font-mono border border-dashed border-neutral-500/60 w-full px-4 py-0.5">
               npm install -g{" "}
               <span className="text-neutral-700 dark:text-white/70">
-                termycommit
+                tcxcommit
               </span>
             </p>
             <span className="font-mono text-xs -rotate-10 absolute -bottom-4 -right-4 px-2 py-0.5 bg-amber-600 text-white">
@@ -137,7 +137,7 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
             </Link>
             <div className="flex gap-3">
               <Link
-                href="https://github.com/sahilcodexx/termyCommit"
+                href="https://github.com/sahilcodexx/tcxcommit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-mono text-neutral-500 dark:text-neutral-400/80 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all duration-200 cursor-pointer hover:underline"
@@ -145,7 +145,7 @@ export function HomeContent({ version, downloads, stars }: HomeContentProps) {
                 [github]
               </Link>
               <Link
-                href="https://npmjs.com/package/termycommit"
+                href="https://npmjs.com/package/tcxcommit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-mono text-neutral-500 dark:text-neutral-400/80 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all duration-200 cursor-pointer hover:underline"

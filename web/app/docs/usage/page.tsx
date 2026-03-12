@@ -8,19 +8,19 @@ export default function UsagePage() {
       <H1>Usage</H1>
 
       <P>
-        Using termyCommit is simple! Just run the command in your git repository and let AI generate your commit message.
+        Using tcxcommit is simple! Just run the command in your git repository and let AI generate your commit message.
       </P>
 
       <H2>Basic Usage</H2>
 
-      <P>Run termyCommit in your project directory:</P>
+      <P>Run tcxcommit in your project directory:</P>
 
-      <Pre>{`termycommit`}</Pre>
+      <Pre>{`tcxcommit`}</Pre>
 
       <H3>Step by Step Process</H3>
 
       <Ol>
-        <Li><strong>Start</strong> - Run <Code>termycommit</Code> in your git repository</Li>
+        <Li><strong>Start</strong> - Run <Code>tcxcommit</Code> in your git repository</Li>
         <Li><strong>Confirm</strong> - Press Enter to continue (or Ctrl+C to exit)</Li>
         <Li><strong>API Choice</strong> - Choose between your own API key or free trials</Li>
         <Li><strong>Auto Stage</strong> - All changes are automatically staged</Li>
@@ -34,7 +34,7 @@ export default function UsagePage() {
 
       <P>Here&apos;s what a typical session looks like:</P>
 
-      <Pre>{`Getting Started with termyCommit
+      <Pre>{`Getting Started with tcxcommit
   v1.0.0 — AI commit helper
 
   Continue? [Y/n] y
@@ -93,7 +93,7 @@ export default function UsagePage() {
 
       <H3>First Time Setup</H3>
 
-      <Pre>{`termycommit
+      <Pre>{`tcxcommit
 # Follow the prompts to:
 # 1. Choose API method (free trials or your own key)
 # 2. Enter API key if you choose "own"
@@ -112,13 +112,13 @@ export default function UsagePage() {
       <P>Make sure you have staged changes before running:</P>
 
       <Pre>{`git add .
-termycommit`}</Pre>
+tcxcommit`}</Pre>
 
       <H3>Rate limit exceeded</H3>
 
       <P>Add your own API key for unlimited usage:</P>
 
-      <Pre>{`# Run termycommit and choose "Add my own API key"`}</Pre>
+      <Pre>{`# Run tcxcommit and choose "Add my own API key"`}</Pre>
 
       <H3>Not a git repository</H3>
 
@@ -126,12 +126,12 @@ termycommit`}</Pre>
 
       <Pre>{`git init
 git add .
-termycommit`}</Pre>
+tcxcommit`}</Pre>
 
       <H2>Next Steps</H2>
 
       <P>
-        That&apos;s it! You&apos;re ready to use termyCommit. Happy coding!
+        That&apos;s it! You&apos;re ready to use tcxcommit. Happy coding!
       </P>
     </>
   );

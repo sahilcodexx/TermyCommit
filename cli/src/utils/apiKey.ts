@@ -6,7 +6,7 @@ import chalk from "chalk";
 
 const DEFAULT_API_KEY = "sk-or-v1-xxxx";
 const MAX_FREE_TRIALS = 5;
-const CONFIG_DIR = path.join(os.homedir(), ".termycommit");
+const CONFIG_DIR = path.join(os.homedir(), ".tcxcommit");
 const CONFIG_FILE = path.join(CONFIG_DIR, "config.json");
 
 interface Config {

@@ -5,8 +5,8 @@ import { TableOfContents } from "@/components/docs/table-of-contents";
 import { DocsContent } from "@/components/docs/docs-content";
 
 export const metadata: Metadata = {
-  title: "Documentation - termyCommit",
-  description: "Learn how to use termyCommit - AI-powered git commit message generator",
+  title: "Documentation - tcxcommit",
+  description: "Learn how to use tcxcommit - AI-powered git commit message generator",
 };
 
 export default function DocsLayout({

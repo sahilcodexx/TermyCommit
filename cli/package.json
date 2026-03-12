@@ -5,7 +5,7 @@
   "description": "AI-powered git commit message generator",
   "main": "dist/index.js",
   "bin": {
-    "termycommit": "./dist/cli.js"
+    "tcxcommit": "./dist/cli.js"
   },
   "scripts": {
     "dev": "tsx src/cli.ts",

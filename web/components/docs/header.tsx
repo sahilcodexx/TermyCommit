@@ -15,7 +15,7 @@ export function DocsHeader() {
             animate={{ opacity: 1 }}
             className="text-lg font-medium italic text-neutral-900 dark:text-neutral-100"
           >
-            termyCommit
+            tcxcommit
           </motion.span>
         </Link>
 
@@ -27,7 +27,7 @@ export function DocsHeader() {
             className="flex items-center gap-3"
           >
             <Link
-              href="https://github.com/sahilcodexx/termyCommit"
+              href="https://github.com/sahilcodexx/tcxcommit"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-mono text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"

@@ -1,10 +1,10 @@
-# termyCommit
+# tcxcommit
 
 AI-powered git commit message generator that writes your commit messages for you!
 
 ## Description
 
-termyCommit is a command-line tool that uses artificial intelligence to generate meaningful and conventional git commit messages. Simply stage your changes and let termyCommit create the perfect commit message for you. It supports both free trials and your own OpenRouter API key.
+tcxcommit is a command-line tool that uses artificial intelligence to generate meaningful and conventional git commit messages. Simply stage your changes and let tcxcommit create the perfect commit message for you. It supports both free trials and your own OpenRouter API key.
 
 ## Features
 
@@ -29,13 +29,13 @@ termyCommit is a command-line tool that uses artificial intelligence to generate
 ### Install via npm
 
 ```bash
-npm install -g termycommit
+npm install -g tcxcommit
 ```
 
 ### Install via npx (no installation required)
 
 ```bash
-npx termycommit
+npx tcxcommit
 ```
 
 ## Usage
@@ -47,7 +47,7 @@ npx termycommit
 3. Run the following command:
 
 ```bash
-termycommit
+tcxcommit
 ```
 
 4. Follow the interactive prompts:
@@ -59,7 +59,7 @@ termycommit
 
 ### Using with Git
 
-termyCommit automatically stages your changes before generating the commit message. You can also manually stage files:
+tcxcommit automatically stages your changes before generating the commit message. You can also manually stage files:
 
 ```bash
 # Stage specific file
@@ -76,7 +76,7 @@ git add src/
 
 ### Option 1: Free Trials
 
-By default, termyCommit provides 5 free trial commits using OpenRouter's free AI model. This is useful for testing or occasional use.
+By default, tcxcommit provides 5 free trial commits using OpenRouter's free AI model. This is useful for testing or occasional use.
 
 - No API key required
 - 5 free commits included
@@ -88,7 +88,7 @@ By default, termyCommit provides 5 free trial commits using OpenRouter's free AI
 For unlimited commits, you can use your own OpenRouter API key:
 
 1. Visit [OpenRouter.ai](https://openrouter.ai/keys) to get a free API key
-2. Run `termycommit`
+2. Run `tcxcommit`
 3. Select "Use my own API key" when prompted
 4. Enter your API key
 5. The key is saved locally for future use
@@ -98,16 +98,16 @@ Your API key is stored securely on your machine and is never shared with anyone 
 ## Commands
 
 ```bash
-# Start termyCommit
-termycommit
+# Start tcxcommit
+tcxcommit
 
 # Or use npx without installing
-npx termycommit
+npx tcxcommit
 ```
 
 ## How It Works
 
-termyCommit follows this simple flow:
+tcxcommit follows this simple flow:
 
 1. Checks for git repository in current directory
 2. Stages all changes automatically using `git add .`
@@ -127,7 +127,7 @@ termyCommit follows this simple flow:
 Error: No changes found
 ```
 
-Solution: Make some changes to your files and try again. termyCommit requires at least one staged change to generate a commit message.
+Solution: Make some changes to your files and try again. tcxcommit requires at least one staged change to generate a commit message.
 
 ### Rate limit exceeded
 
@@ -170,7 +170,7 @@ git init
 If you get permission errors during installation:
 
 ```bash
-sudo npm install -g termycommit
+sudo npm install -g tcxcommit
 ```
 
 Or fix npm permissions:
@@ -180,15 +180,15 @@ mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
-npm install -g termycommit
+npm install -g tcxcommit
 ```
 
 ## Configuration
 
-termyCommit stores its configuration in the following location:
+tcxcommit stores its configuration in the following location:
 
-- Linux/macOS: `~/.termycommit/config.json`
-- Windows: `C:\Users\YourUsername\.termycommit\config.json`
+- Linux/macOS: `~/.tcxcommit/config.json`
+- Windows: `C:\Users\YourUsername\.tcxcommit\config.json`
 
 The configuration file contains:
 - Your API key (if set)
@@ -197,7 +197,7 @@ The configuration file contains:
 ## Project Structure
 
 ```
-termycommit/
+tcxcommit/
 ├── src/
 │   ├── cli.ts              # Entry point
 │   ├── index.ts            # Main application logic
@@ -236,14 +236,14 @@ ISC License
 
 ## Author
 
-termyCommit is created and maintained by the community.
+tcxcommit is created and maintained by the community.
 
 ## Support
 
 If you encounter any issues or have suggestions:
 
-- Open an issue on GitHub: https://github.com/sahilcodexx/termyCommit/issues
-- Check the source code on GitHub: https://github.com/sahilcodexx/termyCommit
+- Open an issue on GitHub: https://github.com/sahilcodexx/tcxcommit/issues
+- Check the source code on GitHub: https://github.com/sahilcodexx/tcxcommit
 
 ## Acknowledgments
 

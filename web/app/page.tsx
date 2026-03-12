@@ -14,13 +14,13 @@ interface GithubData {
 
 async function getNpmData(): Promise<NpmData> {
   try {
-    const res = await fetch("https://registry.npmjs.org/termycommit", {
+    const res = await fetch("https://registry.npmjs.org/tcxcommit", {
       next: { revalidate: 3600 }
     });
     const data = await res.json();
     
     const downloadsRes = await fetch(
-      "https://api.npmjs.org/downloads/point/last-week/termycommit"
+      "https://api.npmjs.org/downloads/point/last-week/tcxcommit"
     );
     const downloadsData = await downloadsRes.json();
     
@@ -36,7 +36,7 @@ async function getNpmData(): Promise<NpmData> {
 async function getGithubData(): Promise<GithubData> {
   try {
     const res = await fetch(
-      "https://api.github.com/repos/sahilcodexx/termyCommit",
+      "https://api.github.com/repos/sahilcodexx/tcxcommit",
       { 
         next: { revalidate: 60 },
         headers: {
