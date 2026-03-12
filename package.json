@@ -1,16 +1,14 @@
 {
-  "name": "tcxcommit",
+  "name": "termycommit",
   "version": "1.0.1",
-  "type": "module",
-  "description": "AI-powered git commit message generator",
-  "main": "src/index.js",
-  "bin": {
-    "tcxcommit": "./bin/cli.ts"
-  },
+  "private": true,
+  "workspaces": [
+    "cli",
+    "web"
+  ],
   "scripts": {
-    "start": "tsx bin/cli.ts",
-    "dev": "tsx bin/cli.ts",
-    "build": "tsc"
+    "dev": "npm run dev --workspace=cli",
+    "web": "npm run dev --workspace=web"
   },
   "keywords": [
     "git",
@@ -19,16 +17,5 @@
     "tcxcommit"
   ],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^5.6.2",
-    "dotenv": "^17.3.1",
-    "prompts": "^2.4.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/prompts": "^2.4.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
-  }
+  "license": "ISC"
 }
