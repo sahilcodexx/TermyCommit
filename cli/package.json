@@ -1,6 +1,6 @@
 {
-  "name": "termycommit",
-  "version": "1.0.2",
+  "name": "tcxcommit",
+  "version": "1.0.3",
   "type": "module",
   "description": "AI-powered git commit message generator",
   "main": "dist/index.js",
