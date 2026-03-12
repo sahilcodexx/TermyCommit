@@ -1,220 +1,159 @@
-# tcxcommit
+<p align="center">
+  <img src="./web/public/Tcxcommit.svg" alt="termyCommit" width="300" />
+</p>
 
-AI-powered git commit message generator using OpenRouter API.
+<h1 align="center">Never write commit messages manually</h1>
 
-[![npm version](https://img.shields.io/npm/v/tcxcommit)](https://www.npmjs.com/package/tcxcommit)
-[![npm downloads](https://img.shields.io/npm/dm/tcxcommit)](https://www.npmjs.com/package/tcxcommit)
+<p align="center">
+  <a href="https://www.npmjs.com/package/tcxcommit">
+    <img src="https://img.shields.io/npm/v/tcxcommit?style=flat&color=yellow" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/tcxcommit">
+    <img src="https://img.shields.io/npm/dt/tcxcommit?style=flat&color=blue" alt="npm downloads" />
+  </a>
+  <a href="https://github.com/sahilcodexx/termyCommit/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/tcxcommit?style=flat" alt="license" />
+  </a>
+  <a href="https://github.com/sahilcodexx/termyCommit/issues">
+    <img src="https://img.shields.io/github/issues/sahilcodexx/termyCommit?style=flat&color=red" alt="issues" />
+  </a>
+</p>
 
-tcxcommit helps you generate smart and meaningful commit messages for your git repository using AI. Just stage your changes and let tcxcommit create the perfect commit message for you.
+<p align="center">
+  <b>AI-powered git commit message generator</b> • Write meaningful commit messages in seconds
+</p>
 
-## Features
+---
 
-- Generate smart commit messages from git diff
-- Supports both your own API key and free trials (5 uses)
-- Clean and beautiful CLI interface with ASCII art header
-- Option to push to remote after commit
-- Tracks free trial usage
-- Handles API rate limits gracefully
+## ✨ Features
 
-## Installation
+- 🤖 **AI-Powered** - Generates smart commit messages using OpenRouter AI
+- 📝 **Conventional Commits** - Follows standard format (feat:, fix:, docs:, etc.)
+- 🔑 **Free to Start** - 5 free trials included, no API key needed
+- 🔐 **Your Own Key** - Use personal OpenRouter API key for unlimited usage
+- ⚡ **Auto-Stage** - Automatically stages changes before generating
+- 🚀 **Push Support** - Option to push to remote after commit
+- 🎨 **Beautiful CLI** - Clean, colorful terminal interface
+
+---
+
+## 📦 Installation
 
 ```bash
 npm install -g tcxcommit
 ```
 
-## Quick Start
+Or use directly with npx:
 
 ```bash
-# Stage your changes
-git add .
+npx tcxcommit
+```
 
-# Run tcxcommit
+---
+
+## 🚀 Quick Start
+
+```bash
+# Just run in your git repository
 tcxcommit
 ```
 
-## Usage Guide
+That's it! Follow the prompts and let AI write your commit messages.
 
-### Step 1: Stage Your Changes
+---
 
-Before running tcxcommit, stage the files you want to commit:
-
-```bash
-# Stage specific file
-git add filename.js
-
-# Stage all changes
-git add .
-
-# Stage all changes in a folder
-git add src/
-```
-
-### Step 2: Run tcxcommit
-
-```bash
-tcxcommit
-```
-
-### Step 3: Follow the Prompts
-
-1. **Continue?** - Press Enter to start
-2. **Choose API option** - Select your own key or free trials
-3. **Wait for AI** - Generates commit message
-4. **Choose action** - Accept & Commit / Regenerate / Exit
-5. **Push?** - Choose to push to remote or not
-
-## API Key Setup
-
-### Option 1: Your Own API Key
-
-Using your own API key gives you unlimited commits without worrying about free trial limits.
-
-1. Visit [OpenRouter](https://openrouter.ai/keys) to get a free API key
-2. When prompted in tcxcommit, select "Use my own API key"
-3. Enter your API key when asked
-4. The key is saved to `.env` file for future use
-
-Your key stays on your machine and is never shared.
-
-### Option 2: Free Trials
-
-tcxcommit provides 5 free trial commits using a default API key. This is useful for testing or occasional use.
-
-- Shows remaining trials on each run
-- When exhausted, you'll be prompted to add your own key
-- Trials reset when you add your own API key
-
-## Commands
-
-```bash
-# Basic usage
-tcxcommit
-
-# Stage specific file
-git add index.js
-
-# Stage all changes
-git add .
-
-# Stage specific folder
-git add src/
-
-# Check staged files
-git status
-
-# Commit manually (without AI)
-git commit -m "your message"
-
-# Push to remote
-git push
-```
-
-## Troubleshooting
-
-### No staged changes found
+## 📖 Usage
 
 ```
-Error: No staged changes
+1. Run tcxcommit in your project
+2. Choose API option (free trials or your own key)
+3. AI generates a commit message
+4. Accept, regenerate, or exit
+5. Optionally push to remote
 ```
 
-**Solution:** Stage your files first with `git add <filename>`
-
-### Rate limit exceeded
+### Demo
 
 ```
-Error: Rate limit exceeded
+termyCommit v1.0.3 — AI commit helper
+
+Continue? [Y/n] y
+
+Free trials remaining: 5
+
+Choose API option:
+  1. Use my own API key
+  2. Use free trials (5 left)
+
+> Use free trials
+
+⠋ Generating commit message...
+
+┌──────────────────────────────────────────────────┐
+│                                                  │
+│   feat: Add user authentication module           │
+│   - Implement JWT-based login                    │
+│   - Add password hashing with bcrypt             │
+│   - Create auth middleware                       │
+│                                                  │
+└──────────────────────────────────────────────────┘
+
+Choose:
+  1. Accept & Commit
+  2. Regenerate
+  3. Exit
 ```
 
-**Solution:** Add your own API key for unlimited usage
+---
 
-### Free trials exhausted
+## 🔑 API Key Setup
 
-```
-Error: Free trials exhausted
-```
+### Option 1: Free Trials (Default)
+- 5 free commits without any setup
+- Uses OpenRouter's free model
+- Perfect for trying it out
 
-**Solution:** Use your own API key when prompted
+### Option 2: Your Own API Key
+1. Get a free API key from [OpenRouter.ai](https://openrouter.ai/keys)
+2. Run `tcxcommit`
+3. Select "Use my own API key"
+4. Enter your key
+5. Saved automatically for future use
 
-### Permission denied (Linux/Mac)
+Your key stays local and is never shared!
 
-If you get permission errors:
+---
 
-```bash
-sudo npm install -g tcxcommit
-```
+## ⚙️ Requirements
 
-Or fix npm permissions:
+- Node.js 18+
+- Git installed
+- Internet connection (for AI)
 
-```bash
-mkdir ~/.npm-global
-npm config set prefix '~/.npm-global'
-echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-npm install -g tcxcommit
-```
+---
 
-## How It Works
+## 🛠️ Tech Stack
 
-tcxcommit uses the following flow:
+- **Node.js** - Runtime
+- **TypeScript** - Language
+- **OpenRouter** - AI API
+- **Chalk** - Terminal styling
+- **Prompts** - Interactive CLI
 
-1. Reads your staged git changes using `git diff --cached`
-2. Sends the diff to OpenRouter AI API
-3. AI generates a conventional commit message (feat:, fix:, docs:, etc.)
-4. Displays the suggested message
-5. If accepted, commits with the message
-6. Optionally pushes to remote
+---
 
-## Requirements
+## 🤝 Contributing
 
-- Node.js 18 or higher
-- Git installed and configured
-- An OpenRouter API key (optional - 5 free trials included)
+Contributions are welcome! Please feel free to submit a [Pull Request](https://github.com/sahilcodexx/termyCommit/pulls).
 
-## Project Structure
+---
 
-```
-tcxcommit/
-├── bin/
-│   └── cli.js              # Entry point
-├── src/
-│   ├── index.js            # Main application flow
-│   ├── api/
-│   │   └── openrouter.js   # OpenRouter API integration
-│   ├── ui/
-│   │   ├── header.js       # ASCII header display
-│   │   └── spinner.js      # Loading spinner
-│   └── utils/
-│       ├── apiKey.js       # API key management
-│       └── git.js          # Git operations
-├── package.json
-└── README.md
-```
+## 📄 License
 
-## Security
+[ISC](https://github.com/sahilcodexx/termyCommit/blob/main/LICENSE)
 
-- Your API key is stored locally in the `.env` file
-- The `.env` file is ignored by git
-- Keys are never sent to any server except OpenRouter
-- Default free trials use a shared key for demonstration
+---
 
-## License
-
-ISC
-
-## Author
-
-tcxcommit is created and maintained by the community.
-
-## Support
-
-If you encounter any issues or have suggestions:
-
-- Open an issue on GitHub
-- Check the source code
-- Fork and contribute
-
-## Acknowledgments
-
-- [OpenRouter](https://openrouter.ai/) for providing the AI API
-- [Chalk](https://github.com/chalk/chalk) for beautiful CLI colors
-- [Prompts](https://github.com/terkelg/prompts) for interactive prompts
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/sahilcodexx">sahilcodexx</a>
+</p>
