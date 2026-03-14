@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "tcxcommit - AI-Powered Git Commit Message Generator",
     template: "%s | tcxcommit",
   },
-  description: "tcxcommit is an AI-powered CLI tool that generates smart and conventional git commit messages. Never write commit messages manually again. Free to start with 5 trials.",
+  description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials, unlimited with your API key.",
   keywords: [
     "git commit",
     "commit message generator",
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     url: "https://tcxcommit.com",
     siteName: "tcxcommit",
     title: "tcxcommit - AI-Powered Git Commit Message Generator",
-    description: "tcxcommit is an AI-powered CLI tool that generates smart and conventional git commit messages. Never write commit messages manually again. Free to start with 5 trials.",
+    description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials, unlimited with your API key.",
     images: [
       {
-        url: "/tcx-commit.webp",
+        url: "https://tcxcommit.com/tcx-commit.webp",
         width: 1200,
         height: 630,
         alt: "tcxcommit - AI Git Commit Message Generator",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "tcxcommit - AI-Powered Git Commit Message Generator",
-    description: "tcxcommit is an AI-powered CLI tool that generates smart and conventional git commit messages. Never write commit messages manually again.",
-    images: ["/tcx-commit.webp"],
+    description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials.",
+    images: ["https://tcxcommit.com/tcx-commit.webp"],
     creator: "@sahilcodexx",
   },
   robots: {
