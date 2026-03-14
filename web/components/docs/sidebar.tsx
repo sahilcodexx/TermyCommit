@@ -20,16 +20,17 @@ export function DocsSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-56 shrink-0 overflow-y-auto border-r border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-8 pl-8 lg:block">
-      <nav className="flex flex-col gap-4">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-64 shrink-0 overflow-y-auto border-r border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50/50 dark:bg-neutral-950/50 py-8 pl-4 lg:block">
+      <nav className="flex flex-col px-3">
         {sidebarItems.map((section, sectionIndex) => (
           <motion.div
             key={section.title}
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: sectionIndex * 0.1 }}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: sectionIndex * 0.05 }}
+            className="mb-6"
           >
-            <h4 className="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+            <h4 className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
               {section.title}
             </h4>
             <ul className="flex flex-col gap-0.5">
@@ -38,32 +39,20 @@ export function DocsSidebar() {
                 return (
                   <motion.li
                     key={item.href}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: -5 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: sectionIndex * 0.1 + itemIndex * 0.05 }}
+                    transition={{ delay: sectionIndex * 0.05 + itemIndex * 0.03 }}
                   >
                     <Link
                       href={item.href}
                       className={cn(
-                        "group relative flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition-all duration-200",
+                        "group flex items-center rounded-md px-3 py-1.5 text-[14px] transition-all duration-150",
                         isActive
-                          ? "text-neutral-900 dark:text-neutral-100"
-                          : "text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200"
+                          ? "bg-neutral-200/60 dark:bg-neutral-800/60 text-neutral-900 dark:text-neutral-100 font-medium"
+                          : "text-neutral-600 hover:bg-neutral-200/40 dark:text-neutral-400 dark:hover:bg-neutral-800/40 dark:hover:text-neutral-200"
                       )}
                     >
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-4 bg-neutral-900 dark:bg-neutral-100 rounded-full"
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        />
-                      )}
-                      <span className={cn(
-                        "relative",
-                        isActive && "font-medium"
-                      )}>
-                        {item.title}
-                      </span>
+                      {item.title}
                     </Link>
                   </motion.li>
                 );
@@ -76,13 +65,13 @@ export function DocsSidebar() {
   );
 }
 
-// Mobile version - horizontal nav below header
+// Mobile version - horizontal scrollable tabs
 export function DocsSidebarMobile() {
   const pathname = usePathname();
 
   return (
-    <div className="lg:hidden fixed top-14 left-0 right-0 z-20 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black">
-      <nav className="flex items-center gap-1 px-4 py-3 overflow-x-auto">
+    <div className="lg:hidden sticky top-14 z-20 border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm">
+      <nav className="flex items-center gap-1 px-4 py-2 overflow-x-auto scrollbar-hide">
         {sidebarItems[0].items.map((item) => {
           const isActive = pathname === item.href;
           return (
@@ -90,10 +79,10 @@ export function DocsSidebarMobile() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex-shrink-0 px-3 py-1.5 text-sm rounded-full transition-all duration-200 whitespace-nowrap",
+                "flex-shrink-0 px-3 py-1.5 text-[13px] rounded-md transition-all duration-150 whitespace-nowrap",
                 isActive
                   ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 font-medium"
-                  : "text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
               )}
             >
               {item.title}
