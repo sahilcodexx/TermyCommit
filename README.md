@@ -10,7 +10,7 @@ tcxcommit is a command-line tool that uses artificial intelligence to generate m
 
 - AI-powered commit message generation
 - Conventional commit format support (feat:, fix:, docs:, refactor:, etc.)
-- Free to start with 5 trial commits
+- Free to start with 10 trial commits (requires `OPENROUTER_TRIAL_KEY`)
 - Option to use your own OpenRouter API key for unlimited usage
 - Automatic change staging
 - Git push support after commit
@@ -76,12 +76,12 @@ git add src/
 
 ### Option 1: Free Trials
 
-By default, tcxcommit provides 5 free trial commits using OpenRouter's free AI model. This is useful for testing or occasional use.
+By default, tcxcommit provides 10 free trial commits powered by a trial key you configure—this is useful for testing or occasional use.
 
-- No API key required
-- 5 free commits included
-- Shows remaining trials on each run
-- When exhausted, prompts to add your own key
+- No personal API key is required: just point `OPENROUTER_TRIAL_KEY` at the shared key you want to reuse.
+- Prompts still show remaining trials on each run when configured.
+- When the trial count hits zero, tcxcommit asks you to add your own key.
+- Run `tcxcommit --free-trial` or set `TCXCOMMIT_FORCE_TRIAL=1` to force the trial menu even if a saved key exists.
 
 ### Option 2: Your Own API Key
 
@@ -194,6 +194,10 @@ The configuration file contains:
 - Your API key (if set)
 - Number of free trials remaining
 
+tcxcommit also relies on these environment variables when the config has no saved key:
+-- `OPENROUTER_API_KEY`: optional personal key to use instead of entering it interactively.
+-- `OPENROUTER_TRIAL_KEY`: the key to reuse for free trial runs; leave unset to disable the trial path.
+
 ## Project Structure
 
 ```
@@ -219,7 +223,7 @@ tcxcommit/
 
 - Your API key is stored locally in the configuration file
 - Keys are never sent to any server except OpenRouter
-- The default free trials use a shared key for demonstration purposes
+- Free trials require you to set `OPENROUTER_TRIAL_KEY` so no secret is checked into this project
 - No data is collected or analytics are sent anywhere
 
 ## Technologies Used

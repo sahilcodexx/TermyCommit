@@ -7,16 +7,14 @@ if (args.includes("--version") || args.includes("-v")) {
 }
 if (args.includes("--help") || args.includes("-h")) {
     console.log(`
-  tcxcommit - AI-powered git commit message generator
+tcxcommit - AI-powered git commit message generator
 
 Usage: tcxcommit [options]
 
 Options:
   --version, -v   Show version number
   --help, -h      Show help
-  --free-trial    Force the CLI to skip saved key and show the free-trial menu
 `);
     process.exit(0);
 }
-const forceTrial = args.includes("--free-trial") || args.includes("--trial") || process.env.TCXCOMMIT_FORCE_TRIAL === "1";
-run({ forceTrial });
+run();

@@ -4,14 +4,11 @@ import path from "path";
 import prompts from "prompts";
 import chalk from "chalk";
 
-const FALLBACK_TRIAL_KEY =
-  "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";
 const envFreeTrials = Number(process.env.FREE_TRIALS ?? "10");
 const DEFAULT_FREE_TRIALS = Number.isFinite(envFreeTrials)
   ? Math.max(0, Math.floor(envFreeTrials))
   : 10;
-const DEFAULT_TRIAL_KEY =
-  (process.env.OPENROUTER_API_KEY ?? "").trim() || FALLBACK_TRIAL_KEY;
+const ENV_TRIAL_KEY = (process.env.OPENROUTER_TRIAL_KEY ?? "").trim();
 const CONFIG_DIR = path.join(os.homedir(), ".tcxcommit");
 const CONFIG_FILE = path.join(CONFIG_DIR, "config.json");
 
@@ -107,6 +104,12 @@ function showKeyInstructions(): void {
   console.log(chalk.gray("  https://openrouter.ai/keys\n"));
 }
 
+function showTrialKeyHint(): void {
+  if (!ENV_TRIAL_KEY) {
+    console.log(chalk.gray("\n  Set OPENROUTER_TRIAL_KEY in your environment to keep using the default trial flow."));
+  }
+}
+
 async function promptForApiKey(config: Config): Promise<string> {
   showKeyInstructions();
 
@@ -126,11 +129,6 @@ async function promptForApiKey(config: Config): Promise<string> {
     return promptForApiKey(config);
   }
 
-  if (key === DEFAULT_TRIAL_KEY) {
-    console.log(chalk.red("  Invalid API key!"));
-    return promptForApiKey(config);
-  }
-
   config.apiKey = key;
   saveConfig(config);
   console.log(chalk.green("  Key saved!\n"));
@@ -138,11 +136,21 @@ async function promptForApiKey(config: Config): Promise<string> {
   return key;
 }
 
-export async function getApiKey(): Promise<string> {
+export interface ApiKeyOptions {
+  forceTrial?: boolean;
+}
+
+export async function getApiKey(options?: ApiKeyOptions): Promise<string> {
   const config = loadConfig();
   const savedKey = config.apiKey;
+  const forceTrialEnv = process.env.TCXCOMMIT_FORCE_TRIAL === "1";
+  const forceTrial = Boolean(options?.forceTrial) || forceTrialEnv;
 
-  if (savedKey) {
+  if (forceTrial && savedKey) {
+    console.log(chalk.yellow("  Forced trial: ignoring saved API key\n"));
+  }
+
+  if (!forceTrial && savedKey) {
     const choice = await promptSelect(chalk.yellow("  Choose:"), [
       { title: chalk.green("Continue"), value: "continue" },
       { title: chalk.blue("Change API key"), value: "change" },
@@ -156,7 +164,8 @@ export async function getApiKey(): Promise<string> {
     return promptForApiKey(config);
   }
 
-  if (config.freeTrials > 0) {
+  const trialAvailable = Boolean(ENV_TRIAL_KEY);
+  if (config.freeTrials > 0 && trialAvailable) {
     const choice = await promptSelect(chalk.yellow("  Choose:"), [
       {
         title: chalk.green(`Use free trial (${config.freeTrials} left)`),
@@ -169,8 +178,11 @@ export async function getApiKey(): Promise<string> {
       config.freeTrials = Math.max(0, config.freeTrials - 1);
       saveConfig(config);
       console.log(chalk.cyan("  Using free trial\n"));
-      return DEFAULT_TRIAL_KEY;
+      return ENV_TRIAL_KEY;
     }
+  } else if (config.freeTrials > 0) {
+    console.log(chalk.red("  Free trial key is not configured."));
+    showTrialKeyHint();
   } else {
     console.log(chalk.red("  Free trials exhausted!"));
   }

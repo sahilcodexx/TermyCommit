@@ -6,7 +6,7 @@ import { getGitDiff, commit } from "./utils/git.js";
 import chalk from "chalk";
 import prompts from "prompts";
 const VERSION = "1.0.15";
-export async function run(options) {
+export async function run() {
     try {
         header(VERSION);
         const start = await prompts({
@@ -18,9 +18,7 @@ export async function run(options) {
         if (!start.value) {
             return;
         }
-        const apiKey = await getApiKey({
-            forceTrial: options?.forceTrial,
-        });
+        const apiKey = await getApiKey();
         const diff = getGitDiff();
         if (!diff) {
             printBox([chalk.red("No changes found"), chalk.gray("Make some changes first")], { borderColor: "red" });
