@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tcxcommit.com"),
+  metadataBase: new URL("https://tcxcommit.vercel.app"),
   title: {
     default: "tcxcommit - AI-Powered Git Commit Message Generator",
     template: "%s | tcxcommit",
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://tcxcommit.com",
+    url: "https://tcxcommit.vercel.app",
     siteName: "tcxcommit",
     title: "tcxcommit - AI-Powered Git Commit Message Generator",
     description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials, unlimited with your API key.",
     images: [
       {
-        url: "https://tcxcommit.com/tcx-commit.webp",
+        url: "https://tcxcommit.vercel.app/tcx-commit.webp",
         width: 1200,
         height: 630,
         alt: "tcxcommit - AI Git Commit Message Generator",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "tcxcommit - AI-Powered Git Commit Message Generator",
     description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials.",
-    images: ["https://tcxcommit.com/tcx-commit.webp"],
+    images: ["https://tcxcommit.vercel.app/tcx-commit.webp"],
     creator: "@sahilcodexx",
   },
   robots: {
