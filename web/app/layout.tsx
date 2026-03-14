@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials, unlimited with your API key.",
     images: [
       {
-        url: "https://tcxcommit.vercel.app/tcx-commit.webp",
+        url: "https://tcxcommit.vercel.app/tcxcommit.webp",
         width: 1200,
         height: 630,
         alt: "tcxcommit - AI Git Commit Message Generator",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "tcxcommit - AI-Powered Git Commit Message Generator",
     description: "AI-powered CLI tool to generate smart git commit messages. Conventional format, 5 free trials.",
-    images: ["https://tcxcommit.vercel.app/tcx-commit.webp"],
+    images: ["https://tcxcommit.vercel.app/tcxcommit.webp"],
     creator: "@sahilcodexx",
   },
   robots: {

@@ -20,7 +20,7 @@ export function DocsSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-56 shrink-0 overflow-y-auto py-8 pl-8 lg:block">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-56 shrink-0 overflow-y-auto border-r border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black py-8 pl-8 lg:block">
       <nav className="flex flex-col gap-4">
         {sidebarItems.map((section, sectionIndex) => (
           <motion.div
@@ -73,5 +73,34 @@ export function DocsSidebar() {
         ))}
       </nav>
     </aside>
+  );
+}
+
+// Mobile version - horizontal nav below header
+export function DocsSidebarMobile() {
+  const pathname = usePathname();
+
+  return (
+    <div className="lg:hidden fixed top-14 left-0 right-0 z-20 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black">
+      <nav className="flex items-center gap-1 px-4 py-3 overflow-x-auto">
+        {sidebarItems[0].items.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "flex-shrink-0 px-3 py-1.5 text-sm rounded-full transition-all duration-200 whitespace-nowrap",
+                isActive
+                  ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 font-medium"
+                  : "text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              )}
+            >
+              {item.title}
+            </Link>
+          );
+        })}
+      </nav>
+    </div>
   );
 }
