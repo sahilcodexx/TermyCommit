@@ -1,7 +1,11 @@
-import type { MDXComponents } from "mdx/types";
+import type { ComponentType } from "react";
 import { H1, H2, H3, P, Code, Pre, Ul, Ol, Li, A, Blockquote } from "@/components/docs/mdx-elements";
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+type MDXComponentMap = {
+  [key: string]: ComponentType<any>;
+};
+
+export function useMDXComponents(components: MDXComponentMap): MDXComponentMap {
   return {
     h1: H1,
     h2: H2,
