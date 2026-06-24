@@ -1,3 +1,13 @@
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/gradient.svg?title=Tcxcommit&amp;subtitle=Never+Write+commit+Manually&amp;mode=dark" /><img alt="header" src="https://shieldcn.dev/header/gradient.svg?title=Tcxcommit&amp;subtitle=Never+Write+commit+Manually&amp;mode=light" /></picture>
+</p>
+
+<p align="center">
+  <a href="https://https://www.npmjs.com/package/tcxcommit"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/npm/tcxcommit.svg?split=true" /><img alt="badge" src="https://shieldcn.dev/npm/tcxcommit.svg?mode=light&amp;split=true" /></picture></a>
+  <a href="https://github.com/sahilcodexx/tcxcommit"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/github/sahilcodexx/tcxcommit/stars.svg" /><img alt="badge" src="https://shieldcn.dev/github/sahilcodexx/tcxcommit/stars.svg?mode=light" /></picture></a>
+  <a href="https://x.com/sahilcodex"><picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/x/follow/sahilcodex.svg?split=true" /><img alt="follow" src="https://shieldcn.dev/x/follow/sahilcodex.svg?mode=light&amp;split=true" /></picture></a>
+</p>
+
 # tcxcommit
 
 AI-powered git commit message generator that writes your commit messages for you!
@@ -233,6 +243,19 @@ tcxcommit/
 - OpenRouter - AI API provider
 - Chalk - Terminal string styling
 - Prompts - Interactive CLI prompts
+
+## Downloads 
+completed 1k+ download in 1 day
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/chart/npm/tcxcommit.svg?days=120&amp;theme=emerald&amp;logo=false" /><img alt="chart" src="https://shieldcn.dev/chart/npm/tcxcommit.svg?days=120&amp;mode=light&amp;theme=emerald&amp;logo=false" /></picture>
+</p>
+
+## Stars
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/chart/github/stars/sahilcodexx/tcxcommit.svg?logo=false" /><img alt="starts" src="https://shieldcn.dev/chart/github/stars/sahilcodexx/tcxcommit.svg?mode=light&amp;logo=false" /></picture>
+</p>
 
 ## License
 
